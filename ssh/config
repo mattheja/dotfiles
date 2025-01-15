@@ -1,0 +1,123 @@
+Include bigleaf.d/*
+
+host leto
+    Port 22
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+
+host 198.19.8.1
+    ForwardAgent no
+    AddKeysToAgent no
+
+Host netlab
+    Port 22
+    HostName netlab.tx.tacobytes.net
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+
+Host kelsier ghostbloods
+    Port 44322
+    HostName kelsier.tacobytes.net
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+
+Host spotlight
+    HostName spotlight.tacobytes.net
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+    Port 44322
+
+Host elend
+    HostName elend.tacobytes.net
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+    Port 44322
+
+Host sazed
+    HostName sazed.tacobytes.net
+    Port 44322
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+
+Host cpe
+    Port 52222
+    HostName 198.19.8.1
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_bigleaf
+    ForwardAgent yes
+    ServerAliveInterval 120
+    PubkeyAcceptedKeyTypes +ssh-rsa
+    User cpe_user
+    StrictHostKeyChecking No
+
+Host scadrial
+    HostName 172.16.70.253
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+
+Host viv
+    HostName 172.16.70.254
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+    Port 44322
+
+Host hoid
+    HostName 10.100.70.254
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+    Port 44322
+
+Host tardis
+    HostName tardis.tacobytes.net
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+
+Host *.tacobytes.net
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_mattlab-2024
+    ForwardAgent yes
+    User mattheja
+
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile /Users/matthewjacobson/.ssh/id_bigleaf
+    ForwardAgent yes
+    ServerAliveInterval 120
+    PubkeyAcceptedKeyTypes +ssh-rsa
+    User matthewj
+    IdentitiesOnly yes
+    SetEnv TERM=xterm-256color
+
+# bigleaf github
+Host github.com
+   Hostname github.com
+   User git
+   IdentityFile ~/.ssh/id_bigleaf
+
+Host git.assembla.com
+   Hostname git.assembla.com
+   User git
+   IdentityFile ~/.ssh/id_bigleaf

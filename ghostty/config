@@ -1,0 +1,15 @@
+font-size = 18
+
+clipboard-paste-protection = true
+clipboard-trim-trailing-spaces = true
+copy-on-select = true
+auto-update = check
+quick-terminal-position = top
+
+keybind = global:opt+escape=toggle_quick_terminal
+
+theme = catppuccin-mocha
+
+macos-icon = custom-style
+macos-icon-screen-color = #f2aede
+macos-icon-ghost-color = #45475a
