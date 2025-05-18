@@ -1,0 +1,44 @@
+# symlinked to ~/.gitconfig
+
+[core]
+    editor = zed
+
+[color]
+	ui = auto
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[push]
+	autoSetupRemote = true
+	followTags = true
+
+[fetch]
+	all = true
+	prune = true
+	pruneTags = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
+[merge]
+	conflictstyle = zdiff3
+
+[core]
+	excludesfile = ~/.config/git/gitignore
+	hookspath = ~/.config/git/hooks
+
+[init]
+	defaultBranch = main
+
+[include]
+    path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/Bigleaf/"]
+    path = ~/.gitconfig-bigleaf
