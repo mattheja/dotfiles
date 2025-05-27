@@ -32,13 +32,12 @@
 
 [core]
 	excludesfile = ~/.config/git/gitignore
-	hookspath = ~/.config/git/hooks
 
 [init]
 	defaultBranch = main
 
-[include]
-    path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Projects/"]
+    path = ~/.config/git/gitconfig-personal
 
 [includeIf "gitdir:~/Bigleaf/"]
-    path = ~/.gitconfig-bigleaf
+    path = ~/.config/git/gitconfig-bigleaf

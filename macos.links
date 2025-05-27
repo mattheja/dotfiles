@@ -5,3 +5,4 @@ zsh=~/.config/zsh
 zsh/zshenv=~/.zshenv
 config/aliases=~/.config/aliases
 config/macos_aliases=~/.config/macos_aliases
+git/gitconfig=~/.gitconfig
