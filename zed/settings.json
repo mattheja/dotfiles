@@ -42,6 +42,7 @@
 
   "file_types": {
     "Jinja2": ["**/cosmere/*.j2", "**/cosmere/*.j2", "**/core-ansible/*.j2"],
+    "Helm": ["**/helm-charts/**/*.yaml"],
     "Ansible": [
       "**/cosmere/*.yml",
       "**/cosmere/*.yaml",

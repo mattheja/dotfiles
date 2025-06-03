@@ -40,6 +40,6 @@ if type brew &>/dev/null; then
 	export PATH="$(brew --prefix)/opt/ruby/bin:$(brew --prefix)/opt/mysql@8.0/bin:$PATH"
 fi
 
-# Go
-# export GOPATH=$HOME/.go
-# export PATH="$GOPATH/bin:$PATH"
+# Go path via brew by default
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
