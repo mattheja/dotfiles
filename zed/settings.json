@@ -23,15 +23,20 @@
     "terraform": true
   },
   "agent": {
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash-preview-04-17"
+    },
     "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.0-flash"
+      "model": "gemini-2.5-flash-preview-04-17"
     },
     "version": "2"
   },
   "ui_font_size": 17,
+  "format_on_save": "off",
   "buffer_font_size": 17,
   "soft_wrap": "editor_width",
   "theme": {
@@ -62,10 +67,19 @@
       "**/handlers/*.yaml",
       "**/group_vars/*.yml",
       "**/group_vars/*.yaml",
+      "**/host_vars/*.yml",
+      "**/host_vars/*.yaml",
       "**/playbooks/*.yaml",
       "**/playbooks/*.yml",
       "**playbook*.yaml",
       "**playbook*.yml"
     ]
+  },
+  "lsp": {
+    "puppet-languageserver": {
+      "binary": {
+        "arguments": ["--stdio"]
+      }
+    }
   }
 }

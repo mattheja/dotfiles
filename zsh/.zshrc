@@ -43,3 +43,9 @@ fi
 # Go path via brew by default
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
+
+# ruby from brew
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# puppet
+export PATH="$HOME/Projects/puppet-editor-services:$PATH"

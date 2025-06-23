@@ -39,5 +39,8 @@
 [includeIf "gitdir:~/Projects/"]
     path = ~/.config/git/gitconfig-personal
 
+[includeIf "gitdir:~/Bigleaf/assembla"]
+    path = ~/.config/git/gitconfig-assembla
+
 [includeIf "gitdir:~/Bigleaf/"]
     path = ~/.config/git/gitconfig-bigleaf
