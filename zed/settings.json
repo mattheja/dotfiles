@@ -7,6 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "disabled_globs": ["~/Bigleaf/*"],
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
   "git_panel": {
     "dock": "left"
   },
@@ -23,15 +33,17 @@
     "terraform": true
   },
   "agent": {
+    "always_allow_tool_actions": true,
+    "single_file_review": false,
     "inline_assistant_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-preview-04-17"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
-    "default_profile": "ask",
+    "default_profile": "write",
     "model_parameters": [],
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-preview-04-17"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
     "version": "2"
   },
