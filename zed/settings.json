@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+      "gemini": {
+        "ignore_system_version": false,
+        "args": ["--model gemini-2.5-pro"]
+      }
+  },
+  "agent_font_size": 17.0,
   "edit_predictions": {
     "disabled_globs": ["~/Bigleaf/*"],
     "mode": "subtle",
@@ -29,7 +36,7 @@
     "html": true,
     "jinja2": true,
     "make": true,
-    "puppet": true,
+    "puppet": false,
     "terraform": true
   },
   "agent": {
@@ -43,9 +50,8 @@
     "model_parameters": [],
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "model": "claude-opus-4-1-thinking"
     },
-    "version": "2"
   },
   "ui_font_size": 17,
   "format_on_save": "off",
@@ -54,12 +60,12 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "One Dark"
   },
 
   "file_types": {
     "Jinja2": ["**/cosmere/*.j2", "**/cosmere/*.j2", "**/core-ansible/*.j2"],
-    "Helm": ["**/helm-charts/**/*.yaml"],
+    "Helm": ["**/helm-charts/**/*.yaml", "**/Projects/home_k8s/**/*.yaml" ],
     "Ansible": [
       "**/cosmere/*.yml",
       "**/cosmere/*.yaml",
@@ -86,12 +92,5 @@
       "**playbook*.yaml",
       "**playbook*.yml"
     ]
-  },
-  "lsp": {
-    "puppet-languageserver": {
-      "binary": {
-        "arguments": ["--stdio"]
-      }
-    }
   }
 }

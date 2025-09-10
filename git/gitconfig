@@ -36,6 +36,9 @@
 [init]
 	defaultBranch = main
 
+[includeIf "gitdir:~/Projects/prometheus-meta/helm-charts"]
+    path = ~/.config/git/gitconfig-bigleaf
+
 [includeIf "gitdir:~/Projects/"]
     path = ~/.config/git/gitconfig-personal
 

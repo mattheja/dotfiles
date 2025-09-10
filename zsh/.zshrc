@@ -49,3 +49,8 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # puppet
 export PATH="$HOME/Projects/puppet-editor-services:$PATH"
+
+# kubectl autocomplete
+source <(kubectl completion zsh)
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
