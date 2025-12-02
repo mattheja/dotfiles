@@ -7,15 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "confirm_quit": true,
   "agent_servers": {
       "gemini": {
         "ignore_system_version": false,
         "args": ["--model gemini-2.5-pro"]
       }
   },
-  "agent_font_size": 17.0,
+  "features": {
+      "edit_prediction_provider": "copilot"
+    },
+  "agent_ui_font_size": 17.0,
   "edit_predictions": {
-    "disabled_globs": ["~/Bigleaf/*"],
+    "disabled_globs": ["~/.config", "~/Bigleaf/0_NOTES/*"],
     "mode": "subtle",
     "copilot": {
       "proxy": null,
@@ -25,9 +29,9 @@
     "enabled_in_text_threads": false
   },
   "git_panel": {
+    "sort_by_path": true,
     "dock": "left"
   },
-  "git_status": true,
   "auto_install_extensions": {
     "ansible": true,
     "catppuccin": true,
@@ -40,6 +44,7 @@
     "terraform": true
   },
   "agent": {
+    "enable_feedback": false,
     "always_allow_tool_actions": true,
     "single_file_review": false,
     "inline_assistant_model": {
@@ -49,9 +54,9 @@
     "default_profile": "write",
     "model_parameters": [],
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-opus-4-1-thinking"
-    },
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.5"
+    }
   },
   "ui_font_size": 17,
   "format_on_save": "off",

@@ -20,6 +20,11 @@ BNJ_GIT_WARNING_COLOR="%F{003}"
 BNJ_GIT_MERGE_COLOR="%F{004}"
 BNJ_LINE_COLOR="%F{008}"
 BNJ_TEXT_COLOR="%F{015}"
+MJ_KUBE_COLOR_PROD="%F{001}"
+MJ_KUBE_COLOR_DEV="%F{002}"
+MJ_KUBE_COLOR_QA="%F{004}"
+MJ_KUBE_COLOR_HOMELAB="%F{013}"
+MJ_KUBE_COLOR_DEFAULT="%F{015}"
 
 GIT_PROMPT_AHEAD="$BNJ_GIT_WARNING_COLOR⇡"
 GIT_PROMPT_BEHIND="$BNJ_GIT_DIRTY_COLOR⇣"
@@ -35,6 +40,35 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats "$BNJ_GIT_BRANCH%b%m"
 zstyle ':vcs_info:*' actionformats "$BNJ_GIT_BRANCH%b%m"
 zstyle ':vcs_info:git*+set-message:*' hooks git-status
+
+# Get current kubectl context with env-based coloring
+kube_context() {
+	local context
+	local color
+	if command -v kubectl &> /dev/null; then
+		context=$(kubectl config current-context 2>/dev/null)
+		if [[ -n "$context" ]]; then
+			case "$context" in
+				*prod*|*production*)
+					color="$MJ_KUBE_COLOR_PROD"
+					;;
+				*dev*|*development*)
+					color="$MJ_KUBE_COLOR_DEV"
+					;;
+				*qa*)
+					color="$MJ_KUBE_COLOR_QA"
+					;;
+				*homelab*)
+					color="$MJ_KUBE_COLOR_HOMELAB"
+					;;
+				*)
+					color="$MJ_KUBE_COLOR_DEFAULT"
+					;;
+			esac
+			echo "${color}⎈ $context"
+		fi
+	fi
+}
 
 precmd() {
 	vcs_info
@@ -100,4 +134,4 @@ $BNJ_LINE_COLOR]
 $BNJ_LINE_COLOR└─ \
 $BNJ_PROMPT_COLOR%(!.#.%%)$BNJ_TEXT_COLOR$BNJ_RESET_COLOR '
 
-RPROMPT='${vcs_info_msg_0_}$BNJ_RESET_COLOR'
+RPROMPT='$(kube_context) ${vcs_info_msg_0_}$BNJ_RESET_COLOR'
