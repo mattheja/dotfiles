@@ -29,7 +29,8 @@
     "enabled_in_text_threads": false
   },
   "git_panel": {
-    "sort_by_path": true,
+    "tree_view": true,
+    "sort_by_path": false,
     "dock": "left"
   },
   "auto_install_extensions": {
@@ -51,7 +52,7 @@
       "provider": "zed.dev",
       "model": "claude-sonnet-4"
     },
-    "default_profile": "write",
+    "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",

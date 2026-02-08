@@ -54,3 +54,8 @@ export PATH="$HOME/Projects/puppet-editor-services:$PATH"
 source <(kubectl completion zsh)
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
+
+# python things
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
